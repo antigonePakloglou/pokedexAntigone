@@ -1,32 +1,40 @@
 import {Card, Button} from 'react-bootstrap';
+
+//recupération des images
+function importAll(r) {
+    let images = {};
+    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    return images;
+  }
+  
+const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
+  
+
 const Pokemon = ({id,name, type, vitesse}) => {
-    console.log(id.toString().length);
+    
 
     let img;
+    //concatenation du nom des images
     switch (id.toString().length) {
         case 1:
-            img = 'src/img/00'+id.toString()+'.png';
-            console.log(img);
-            break;
+            img = '00'+id.toString()+'.png';  
         case 2:
-            img = 'src/img/0'+id.toString()+'.png';
-            console.log(img);
+            img = '0'+id.toString()+'.png';  
         case 3:
-            img = 'src/img/'+id.toString()+'.png';
-            console.log(img);
-            break;
+            img = id.toString()+'.png'; 
         default:
-            img = 'src/img/001.png';
+            img = '001.png';
     }
 
     return (
-        <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src='img\001.png' />
+        
+       <Card style={{ width: '18rem' }}>
+            <Card.Img width="auto"  src={images[img]} />
             <Card.Body>
                 <Card.Title>{name['french']}</Card.Title>
                 <Button variant="primary">Voir plus</Button>
             </Card.Body>
-        </Card>
+        </Card> 
       
     )
 }
