@@ -1,5 +1,11 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 import Pokemons from './Pokemons';
 <link
   rel="stylesheet"
@@ -9,11 +15,17 @@ import Pokemons from './Pokemons';
 />
 
 function App() {
+  
   return (
-    <div className="App">
-     <h3>Pokedex</h3>
-     <Pokemons/>
-    </div>
+
+      <main>
+        <div className="App">
+          <h3>Pokedex</h3>
+          <Pokemons/>
+        </div>
+      </main>
+
+  
   );
 }
 

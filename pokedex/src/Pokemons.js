@@ -2,19 +2,21 @@
 import Pokemon from './Pokemon';
 import {useState, useEffect} from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
+import { getAllPokemons } from './Service';
 
-
-
-const Pokemons = ({pokemon}) => {
+const Pokemons = () => {
     //recupération données
     let [pokemons, setPokemons] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:3004/pokemons")
-        .then(response => response.json())
-        .then(data => setPokemons(data))
-    },[])
-        console.log(pokemons);
+        getAllPokemons().then((data) => {
+          setPokemons(data);
+        });
+      }, []);
+
+    //TODO pagination
+   
+        
     return (
         <div>
             {/* map permet de boucler sur tout les elements d un tab 
@@ -32,6 +34,7 @@ const Pokemons = ({pokemon}) => {
                     )) } 
                 </Row>
             </Container>
+
         </div>
     )
     
