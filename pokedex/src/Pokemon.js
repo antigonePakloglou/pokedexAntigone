@@ -1,13 +1,11 @@
-import {Card, Button} from 'react-bootstrap';
-import PokemonFiche from './PokemonFiche';
-import {useState, useEffect} from 'react';
+import {Card} from 'react-bootstrap';
 import {
     BrowserRouter as Router,
     Routes,
     Route,
     Link
   } from "react-router-dom";
-import { getPokemonById } from './Service';
+
 
 
 //recupération des images
@@ -17,6 +15,7 @@ function importAll(r) {
     return images;
   }
 const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
+
 
 
 const Pokemon = ({id,name}) => {
@@ -38,20 +37,18 @@ const Pokemon = ({id,name}) => {
     }
 
     return (
-        <Router>
+        
             <main>
-                <Card style={{ width: '18rem' }}>
+                <Card style={{ width: '18rem', background : '#383f66' }}>
                     <Card.Img width="auto"  src={images[img]} />
                     <Card.Body>
                         <Card.Title>{name['french']}</Card.Title>
-                        <Link to="/fiche">About</Link>
+                        <Link to="/fiche">Voir fiche</Link>
                     </Card.Body>
                 </Card>
-                <Routes>
-                    <Route exact path="/fiche" element={<PokemonFiche id={id} />} />
-                </Routes>
+               
             </main>
-        </Router>      
+          
     )
 }
 

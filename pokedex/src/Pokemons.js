@@ -2,26 +2,25 @@
 import Pokemon from './Pokemon';
 import {useState, useEffect} from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
-import { getAllPokemons } from './Service';
+import axios from 'axios';
 
 const Pokemons = () => {
     //recupération données
     let [pokemons, setPokemons] = useState([])
 
     useEffect(() => {
-        getAllPokemons().then((data) => {
-          setPokemons(data);
-        });
-      }, []);
+        axios.get('http://localhost:3004/pokemons?_limit=12')
+        .then(resp => {
+           setPokemons(resp.data);
+       });
+      }, []); 
+    
 
     //TODO pagination
    
         
     return (
         <div>
-            {/* map permet de boucler sur tout les elements d un tab 
-            Pour chaque données du fichier on va appeler le composant <Pokemon/>
-            */}
             <Container>
                 <Row>
                 {  pokemons.map((p)=> (
@@ -33,8 +32,8 @@ const Pokemons = () => {
                         </Col>
                     )) } 
                 </Row>
+               
             </Container>
-
         </div>
     )
     
