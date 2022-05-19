@@ -1,4 +1,5 @@
 import {Card} from 'react-bootstrap';
+import './createFormAssets/css/allPokemons.css';
 import {
     BrowserRouter as Router,
     Routes,
@@ -9,7 +10,7 @@ import {
 
 
 //recupération des images
-function importAll(r) {
+export function importAll(r) {
     let images = {};
     r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
     return images;
@@ -38,13 +39,12 @@ const Pokemon = ({id,name}) => {
 
     return (
         
-            <main>
-                <Card style={{ width: '18rem', background : '#383f66' }}>
+            <main style={{  padding: '2%'}}>
+                <Card className='rounded ombre' style={{ width: '18rem', background : '#ffffff' }}>
                     <Card.Img width="auto"  src={images[img]} />
                     <Card.Body>
-                        <Card.Title>{name['french']}</Card.Title>
-                        <Link to="/fiche">Voir fiche</Link>
                     </Card.Body>
+                    <Card.Title className='button' style={{ fontFamily : 'Fantasy'}}> <Link to={`/fiche/${id}`} style={{color : '#302E2E' }}>{name['french']}</Link></Card.Title>
                 </Card>
                
             </main>

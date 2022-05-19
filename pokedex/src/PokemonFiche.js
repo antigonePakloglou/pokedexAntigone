@@ -1,30 +1,32 @@
 import axios from 'axios';
 import {useState, useEffect} from 'react';
-import {ListGroup} from 'react-bootstrap';
+import './createFormAssets/css/main.css';
+import {
+  BrowserRouter as Router,
+  useParams,
+} from "react-router-dom";
 
-const PokemonFiche = ({id}) => {
+const PokemonFiche = () => {
     
     //recupération données d'un pokémon
     let [pokemon, setPokemon] = useState([]);
+    const { id } = useParams();
 
-    const url = 'http://localhost:3004/pokemons';
+
     useEffect(() => {
-        axios.get(`${url}/${id}`)
+        axios.get('http://localhost:3004/pokemons/'+id)
         .then(resp => {
+          console.log(resp.data);
            setPokemon(resp.data);
        });
       }, []); 
 
+
+
         return (
            <div className="PokemonFiche">
-            <h3>Fiche</h3>
-            <div  key={id} >
-            <ListGroup>
-                <ListGroup.Item variant="primary">ID : {pokemon.id}</ListGroup.Item>
-                <ListGroup.Item variant="primary">Nom : {pokemon.name.french}</ListGroup.Item>
-                <ListGroup.Item variant="primary">Type : {pokemon.type.map((t) => t )}</ListGroup.Item>
-            </ListGroup>
-          </div> 
+            <h3>Fiche {pokemon.id}</h3>
+           
           </div>
         );
      

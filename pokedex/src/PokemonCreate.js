@@ -68,12 +68,24 @@ const PokemonCreate = () => {
                 <div class="card-heading"></div>
                 <div class="card-body">
                     <h2 class="title">Créer son pokémon</h2>
-                    <form method="POST">
+                    <form onSubmit={ e => {e.preventDefault(); postRequest() }}>
                     <div class="input-group">
                             <input class="input--style-3" type="text" placeholder="Nom" name="Nom" onChange={(e) => {setNom(e.target.value );}} value={nom}/>
                         </div>
-                        <div class="input-group">
+                       {/*  <div class="input-group">
                             <input class="input--style-3" type="text" placeholder="Type" name="Type" onChange={(e) => {setType(e.target.value );}} value={type}/>
+                        </div> */}
+
+                        <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="Type" >
+                                    <option disabled="disabled" onChange={(e) => {setType(e.target.value );}} >Type</option>
+                                    <option value="Feu">Feu</option>
+                                    <option value="Eau">Eau</option>
+                                    <option value="Acier">Acier</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
                         </div>
                         <div class="input-group">
                             <input class="input--style-3" type="text" placeholder="HP" name="HP" onChange={(e) => {setHp(e.target.value );}} value={HP}/>
@@ -94,17 +106,7 @@ const PokemonCreate = () => {
                             <input class="input--style-3" type="text" placeholder="Vitesse" name="Vitesse" onChange={(e) => {setSpeed(e.target.value );}} value={Speed} />
                         </div>
                         
-                        <div class="input-group">
-                            <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="gender">
-                                    <option disabled="disabled" selected="selected">Gender</option>
-                                    <option>Male</option>
-                                    <option>Female</option>
-                                    <option>Other</option>
-                                </select>
-                                <div class="select-dropdown"></div>
-                            </div>
-                        </div>
+                       
                        
                         <div class="p-t-10">
                             <button class="btn btn--pill btn--green" type="submit">Créer</button>

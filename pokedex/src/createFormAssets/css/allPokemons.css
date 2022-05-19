@@ -1,0 +1,17 @@
+
+
+.button {
+  background: -webkit-gradient(linear, left bottom, left top, from(#ff9a7d), to(#ff687a));
+  background: -webkit-linear-gradient(bottom, #ff9a7d 0%, #ff687a 100%);
+  background: -moz-linear-gradient(bottom, #ff9a7d 0%, #ff687a 100%);
+  background: -o-linear-gradient(bottom, #ff9a7d 0%, #ff687a 100%);
+  background: linear-gradient(to top, #ff9a7d 0%, #ff687a 100%);
+  color : white;
+}
+
+.ombre {
+  box-shadow: 4px 2px 2px #e88493;
+}
+
+
+

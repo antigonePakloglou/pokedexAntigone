@@ -9,6 +9,7 @@ import {
 import Pokemons from './Pokemons';
 import PokemonCreate from './PokemonCreate';
 import {Navbar, Container, Nav} from 'react-bootstrap';
+import PokemonFiche from './PokemonFiche';
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -21,10 +22,8 @@ function App() {
   return (
   <Router>
       <main>
-        <div className="App">
-
-          <h3></h3>
-          <Navbar style={{background : '#e4cc67' }} >
+        <div className="App justify-content-center">
+          <Navbar style={{background : '#e88493' }} >
             <Container>
               <Navbar.Brand href="/">Pokedex</Navbar.Brand>
               <Nav className="me-auto">
@@ -36,6 +35,7 @@ function App() {
       <Routes>
       <Route exact path='/*' element={< Pokemons />}></Route>
       <Route exact path='/createPokemon' element={< PokemonCreate />}></Route>
+      <Route exact path='/fiche/:id' element={< PokemonFiche />}></Route>
      
       </Routes>
         </div>

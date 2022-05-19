@@ -16715,6 +16715,71 @@
         "Speed": 6
       },
       "id": 825
+    },
+    {
+      "name": "Pakloglou",
+      "type": "",
+      "base": {
+        "HP": 67,
+        "Attack": 85,
+        "Defense": 32,
+        "Sp. Attack": 57,
+        "Sp. Defense": 89,
+        "Speed": 677
+      },
+      "id": 826
+    },
+    {
+      "name": "Pakloglou",
+      "type": "",
+      "base": {
+        "HP": 67,
+        "Attack": 85,
+        "Defense": 32,
+        "Sp. Attack": 57,
+        "Sp. Defense": 89,
+        "Speed": 677
+      },
+      "id": 827
+    },
+    {
+      "name": "Pakloglou",
+      "type": "",
+      "base": {
+        "HP": 67,
+        "Attack": 85,
+        "Defense": 32,
+        "Sp. Attack": 57,
+        "Sp. Defense": 89,
+        "Speed": 677
+      },
+      "id": 828
+    },
+    {
+      "name": "Pakloglou",
+      "type": "",
+      "base": {
+        "HP": 67,
+        "Attack": 85,
+        "Defense": 32,
+        "Sp. Attack": 57,
+        "Sp. Defense": 89,
+        "Speed": 677
+      },
+      "id": 829
+    },
+    {
+      "name": "Pakloglou",
+      "type": "",
+      "base": {
+        "HP": 67,
+        "Attack": 85,
+        "Defense": 32,
+        "Sp. Attack": 57,
+        "Sp. Defense": 89,
+        "Speed": 677
+      },
+      "id": 830
     }
   ]
 }
