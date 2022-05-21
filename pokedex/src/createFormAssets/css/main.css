@@ -125,7 +125,7 @@ button {
 }
 
 body {
-  font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+  font-family: "Fantasy";
   font-weight: 400;
   font-size: 14px;
 }
@@ -165,16 +165,9 @@ h6 {
   background: #2c6ed5;
 }
 
-.bg-red {
-  background: #fa4251;
-}
 
-.bg-gra-01 {
-  background: -webkit-gradient(linear, left bottom, left top, from(#383f66), to(#2f3653));
-  background: -webkit-linear-gradient(bottom, #383f66 0%, #2f3653 100%);
-  background: -moz-linear-gradient(bottom, #383f66 0%, #2f3653 100%);
-  background: -o-linear-gradient(bottom, #383f66 0%, #2f3653 100%);
-  background: linear-gradient(to top, #383f66 0%, #2f3653 100%);
+.bg {
+ background-color: #fbd8d7;
 }
 
 /* ==========================================================================
@@ -260,55 +253,6 @@ h6 {
   background: #46bb91;
 }
 
-/* ==========================================================================
-   #DATE PICKER
-   ========================================================================== */
-td.active {
-  background-color: #2c6ed5;
-}
-
-input[type="date" i] {
-  padding: 14px;
-}
-
-.table-condensed td, .table-condensed th {
-  font-size: 14px;
-  font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
-  font-weight: 400;
-}
-
-.daterangepicker td {
-  width: 40px;
-  height: 30px;
-}
-
-.daterangepicker {
-  border: none;
-  -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
-  display: none;
-  border: 1px solid #e0e0e0;
-  margin-top: 5px;
-}
-
-.daterangepicker::after, .daterangepicker::before {
-  display: none;
-}
-
-.daterangepicker thead tr th {
-  padding: 10px 0;
-}
-
-.daterangepicker .table-condensed th select {
-  border: 1px solid #000;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  font-size: 14px;
-  padding: 5px;
-  outline: none;
-}
 
 /* ==========================================================================
    #FORM
@@ -350,6 +294,7 @@ input {
   font-size: 16px;
   color: #000;
   background: transparent;
+  border-bottom: #000;
 }
 
 .input--style-3::-webkit-input-placeholder {
@@ -457,7 +402,7 @@ input {
   -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
-  border: 1px solid #e0e0e0;
+  border: 1px solid #ffffff;
   margin-top: 5px;
   overflow: hidden;
 }
@@ -484,7 +429,7 @@ input {
 }
 
 .card-3 {
-  background: rgb(187, 192, 224);
+  background: rgb(255, 255, 255);
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
@@ -494,12 +439,12 @@ input {
   width: 100%;
   display: table;
 }
-
+/* 
 .card-3 .card-heading {
   background: url("../images/createPokemon.png") top /cover no-repeat;
   display: table-cell;
   width: 40%;
-}
+} */
 
 .card-3 .card-body {
   padding-bottom: 65px;

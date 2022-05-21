@@ -22,12 +22,12 @@ function App() {
   <Router>
       <main>
         <div className="App justify-content-center">
-          <Navbar style={{background : '#e88493' }} >
+          <Navbar style={{background : 'black' }} >
             <Container>
-              <Navbar.Brand href="/">Pokedex</Navbar.Brand>
+              <Navbar.Brand style={{color : 'white', fontFamily : 'Fantasy' }} href="/">Pokedex</Navbar.Brand>
               <Nav className="me-auto">
               
-                <Nav.Link href="/createPokemon">Créer un pokémon</Nav.Link>
+                <Nav.Link style={{color : 'white', fontFamily : 'Fantasy' }} href="/createPokemon">Créer un pokémon</Nav.Link>
               </Nav>
             </Container>
           </Navbar>

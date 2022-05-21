@@ -2,38 +2,20 @@ import {Card, Container, Row, Col} from 'react-bootstrap';
 import './createFormAssets/css/allPokemons.css';
 import {Link} from "react-router-dom";
 import axios from 'axios';
-
+import {importImages, concatImgName} from './fonctions';
 import { faTrashCan, faEye } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-//recupération des images
-export function importAll(r) {
-    let images = {};
-    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
-    return images;
-  }
-const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
+
 
 
 
 const Pokemon = ({id,name}) => {
-  
-    let img;
-    //concatenation du nom des images
-    switch (id.toString().length) {
-        case 1:
-            img = '00'+id.toString()+'.png';  
-            break;
-        case 2:
-            img = '0'+id.toString()+'.png';  
-            break;
-        case 3:
-            img = id.toString()+'.png'; 
-            break;
-        default:
-            img = '003.png';
-    }
 
+    //recupération des images
+    const images = importImages(require.context('./img', false, /\.(png|jpe?g|svg)$/));
+    let img = concatImgName(id);
+    
     function deleteRequest (){
         async function deletePokemon() {
             await axios.delete(`http://localhost:3004/pokemons/${id}`);
