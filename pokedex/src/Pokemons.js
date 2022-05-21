@@ -10,29 +10,36 @@ const Pokemons = () => {
     let [page, setPage] = useState(1)
 
     useEffect(() => {
-        axios.get(`http://localhost:3004/pokemons?_page=${page}`)
+        axios.get(`http://localhost:3004/pokemons?_page=${page}&_limit=12`)
         .then(resp => {
            setPokemons(resp.data);
            console.log('page', page);
        });
-      }, []); 
+      }, [page]); 
     
+      function previous(){
+        if(page == 1){
+            setPage(1)
+        } else{
+            setPage(page - 1)
+        }
         
+    }    
     return (
         <div>
             <Container>
                 <Row className='g-4'>
                 {  pokemons.map((p)=> (
-                        <Col>
-                            <div  key={p.id} >
-                                <Pokemon {...p} />
-                            </div>
+                        <Col key={p.id}>
+                          
+                                <Pokemon  {...p} />
+                           
                         </Col>
                     )) } 
                 </Row>
                
             </Container>
-            <Button variant="outline-warning" onClick={() => setPage(page + 1 )}>Next</Button>
+           {page > 1 && <Button style={{background : 'black'}} onClick={() => previous()}>PREV</Button>}  <Button style={{background : 'black'}} onClick={() => setPage(page + 1 )}>NEXT</Button>
         </div>
         
     )

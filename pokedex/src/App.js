@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link
 } from "react-router-dom";
 import Pokemons from './Pokemons';
 import PokemonCreate from './PokemonCreate';

@@ -64,26 +64,6 @@
       }
     },
     {
-      "id": 4,
-      "name": {
-        "english": "Charmander",
-        "japanese": "ヒトカゲ",
-        "chinese": "小火龙",
-        "french": "Salamèche"
-      },
-      "type": [
-        "Fire"
-      ],
-      "base": {
-        "HP": 39,
-        "Attack": 52,
-        "Defense": 43,
-        "Sp. Attack": 60,
-        "Sp. Defense": 50,
-        "Speed": 65
-      }
-    },
-    {
       "id": 5,
       "name": {
         "english": "Charmeleon",
@@ -162,26 +142,6 @@
         "Sp. Attack": 65,
         "Sp. Defense": 80,
         "Speed": 58
-      }
-    },
-    {
-      "id": 9,
-      "name": {
-        "english": "Blastoise",
-        "japanese": "カメックス",
-        "chinese": "水箭龟",
-        "french": "Tortank"
-      },
-      "type": [
-        "Water"
-      ],
-      "base": {
-        "HP": 79,
-        "Attack": 83,
-        "Defense": 100,
-        "Sp. Attack": 85,
-        "Sp. Defense": 105,
-        "Speed": 78
       }
     },
     {
@@ -16780,6 +16740,32 @@
         "Speed": 677
       },
       "id": 830
+    },
+    {
+      "name": "",
+      "type": "",
+      "base": {
+        "HP": null,
+        "Attack": null,
+        "Defense": null,
+        "Sp. Attack": null,
+        "Sp. Defense": null,
+        "Speed": null
+      },
+      "id": 831
+    },
+    {
+      "name": "",
+      "type": "",
+      "base": {
+        "HP": null,
+        "Attack": null,
+        "Defense": null,
+        "Sp. Attack": null,
+        "Sp. Defense": null,
+        "Speed": null
+      },
+      "id": 832
     }
   ]
 }
