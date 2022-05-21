@@ -1,25 +1,16 @@
 {
   "pokemons": [
     {
-      "id": 1,
-      "name": {
-        "english": "Bulbasaur",
-        "japanese": "フシギダネ",
-        "chinese": "妙蛙种子",
-        "french": "Bulbizarre"
-      },
-      "type": [
-        "Grass",
-        "Poison"
-      ],
+      "name": "e",
       "base": {
-        "HP": 45,
-        "Attack": 49,
-        "Defense": 49,
-        "Sp. Attack": 65,
+        "HP": 6754,
+        "Attack": 45,
+        "Defense": 89,
+        "Sp. Attack": 89,
         "Sp. Defense": 65,
-        "Speed": 45
-      }
+        "Speed": 98
+      },
+      "id": 1
     },
     {
       "id": 2,
