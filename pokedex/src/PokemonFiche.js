@@ -65,7 +65,7 @@ const PokemonFiche = () => {
     function putRequest (){
     async function updatePokemon() {
 
-        let data = { name: nom, type: type, base:{HP:parseInt(HP), Attack: parseInt(Attack), Defense: parseInt(Defense), 'Sp. Attack': parseInt(SpAttack), 'Sp. Defense': parseInt(SpDefense), Speed: parseInt(Speed)} };
+        let data = { name:{french: nom}, type: type, base:{HP:parseInt(HP), Attack: parseInt(Attack), Defense: parseInt(Defense), 'Sp. Attack': parseInt(SpAttack), 'Sp. Defense': parseInt(SpDefense), Speed: parseInt(Speed)} };
     
         await axios.put(`http://localhost:3004/pokemons/${id}`, data);
     
@@ -90,73 +90,63 @@ const PokemonFiche = () => {
       <div class="page-wrapper bg p-t-180 p-b-100 font-poppins">
         <div class="wrapper wrapper--w960">
           <div class="card card-3"  style={{background : 'white', fontFamily : 'Fantasy'}}>
-         
-            <div class="card-heading"></div>
-            
-            <div class="card-body"></div>
-            
             <Card.Title className='button' style={{ fontFamily : 'Fantasy'}}><Card.Img  style={{ width : '7%'}}  src={images[img]} /> <br/>  {pokemon['name']['french']} <br/>  <button class="btn  btn--green" onClick={ () => {editPokemon() }}><FontAwesomeIcon icon={faPenToSquare} size="sm" /></button></Card.Title>
-
-              <form id='formulaire' onLoad={()=> setForm()} onSubmit={ e => {e.preventDefault(); putRequest() }} >
-             
+            <form id='formulaire' onLoad={()=> setForm()} onSubmit={ e => {e.preventDefault(); putRequest() }} >
               <Container>
-              <Row> 
-                    <Col>
-                      <div class="input-group">
-                        <label style={{ textDecoration : 'underline'}}>Nom</label>
-                          <input disabled class="input--style-3" type="text" name="Nom" onChange={(e) => {setNom(e.target.value );}} value={nom}/>
-                      </div>
-                    </Col>
-                    <Col>
-                        <div class="input-group">
-                          <label style={{ textDecoration : 'underline'}}>HP</label>
-                            <input disabled class="input--style-3" type="text" name="HP" onChange={(e) => {setHp(e.target.value );}} value={HP}/> 
-                        </div>
-                    </Col>
-                    <Col>
+                <Row> 
+                  <Col>
                     <div class="input-group">
-                        <label style={{ textDecoration : 'underline'}}>Vitesse</label>
-                            <input disabled class="input--style-3" type="text" name="Vitesse" onChange={(e) => {setSpeed(e.target.value );}} value={Speed} />
+                      <label style={{ textDecoration : 'underline'}}>Nom</label>
+                      <input disabled class="input--style-3" type="text" name="Nom" onChange={(e) => {setNom(e.target.value );}} value={nom}/>
                     </div>
-                  
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col>
-                        <div class="input-group">
-                        <label style={{ textDecoration : 'underline'}}>Attaque</label>
-                            <input disabled class="input--style-3" type="text" name="Attaque" onChange={(e) => {setAttack(e.target.value );}} value={Attack}/>
-                        </div>
-                    </Col>
-                    <Col>
-                        <div class="input-group">
-                        <label style={{ textDecoration : 'underline'}}>Defense</label>
-                            <input disabled class="input--style-3" type="text" name="Defense" onChange={(e) => {setDefense(e.target.value );}} value={Defense} />
-                        </div>
-                    </Col>
-                    <Col>
-                        <div class="input-group">
-                        <label style={{ textDecoration : 'underline'}}>Sp. Attaque</label>
-                            <input disabled class="input--style-3" type="text" name="Sp.Attaque" onChange={(e) => {setSpAttack(e.target.value );}}  value={SpDefense} />
-                        </div>
-                    </Col>
-                  </Row>
-                  <Row>
-                   
-                    <Col>
-                        <div class="input-group">
-                        <label style={{ textDecoration : 'underline'}}>Sp. Defense</label>
-                            <input disabled class="input--style-3" type="text" name="Sp.Defense" onChange={(e) => {setSpDefense(e.target.value );}} value={SpDefense} />
-                        </div>
-                    </Col>
-                       
-                  </Row>
-                </Container>
-                <div class="p-t-10">
-                    <button class="btn btn--pill btn--green" id='sauvegarder'  style={{ display : 'none'}}  onClick={ () => {sauvegarderPokemon() }}>Enregistrer</button>
-                </div>
-              </form>
-            </div> 
+                  </Col>
+                  <Col>
+                    <div class="input-group">
+                      <label style={{ textDecoration : 'underline'}}>HP</label>
+                      <input disabled class="input--style-3" type="text" name="HP" onChange={(e) => {setHp(e.target.value );}} value={HP}/> 
+                    </div>
+                  </Col>
+                  <Col>
+                    <div class="input-group">
+                      <label style={{ textDecoration : 'underline'}}>Vitesse</label>
+                      <input disabled class="input--style-3" type="text" name="Vitesse" onChange={(e) => {setSpeed(e.target.value );}} value={Speed} />
+                    </div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <div class="input-group">
+                      <label style={{ textDecoration : 'underline'}}>Attaque</label>
+                      <input disabled class="input--style-3" type="text" name="Attaque" onChange={(e) => {setAttack(e.target.value );}} value={Attack}/>
+                    </div>
+                  </Col>
+                  <Col>
+                    <div class="input-group">
+                      <label style={{ textDecoration : 'underline'}}>Defense</label>
+                      <input disabled class="input--style-3" type="text" name="Defense" onChange={(e) => {setDefense(e.target.value );}} value={Defense} />
+                    </div>
+                  </Col>
+                  <Col>
+                    <div class="input-group">
+                      <label style={{ textDecoration : 'underline'}}>Sp. Attaque</label>
+                      <input disabled class="input--style-3" type="text" name="Sp.Attaque" onChange={(e) => {setSpAttack(e.target.value );}}  value={SpAttack} />
+                    </div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <div class="input-group">
+                      <label style={{ textDecoration : 'underline'}}>Sp. Defense</label>
+                      <input disabled class="input--style-3" type="text" name="Sp.Defense" onChange={(e) => {setSpDefense(e.target.value );}} value={SpDefense} />
+                    </div>
+                  </Col>  
+                </Row>
+              </Container>
+              <div class="p-t-10">
+                <button class="btn btn--pill btn--green" id='sauvegarder'  style={{ display : 'none'}}  onClick={ () => {sauvegarderPokemon() }}>Enregistrer</button>
+              </div>
+            </form>
+          </div> 
         </div>
       </div>
     )

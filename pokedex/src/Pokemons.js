@@ -3,6 +3,9 @@ import Pokemon from './Pokemon';
 import {useState, useEffect} from 'react';
 import {Container, Row, Col, Button} from 'react-bootstrap';
 import axios from 'axios';
+import { faCaretSquareLeft, faCaretSquareRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 const Pokemons = () => {
     //recupération données
@@ -39,7 +42,7 @@ const Pokemons = () => {
                 </Row>
                
             </Container>
-           {page > 1 && <Button style={{background : 'black'}} onClick={() => previous()}>PREV</Button>}  <Button style={{background : 'black'}} onClick={() => setPage(page + 1 )}>NEXT</Button>
+           {page > 1 && <Button style={{background : 'none', border : 'none'}}  onClick={() => previous()}><FontAwesomeIcon style={{color : 'black'}}  icon={faCaretSquareLeft} size="xl" /></Button>}  <Button style={{background : 'none', border : 'none'}}  onClick={() => setPage(page + 1 )}><FontAwesomeIcon style={{color : 'black'}} icon={faCaretSquareRight} size="xl" /></Button>
         </div>
         
     )

@@ -1,37 +1,32 @@
 {
   "pokemons": [
     {
-      "name": "e",
+      "name": {
+        "french": "test"
+      },
       "base": {
-        "HP": 6754,
-        "Attack": 45,
-        "Defense": 89,
-        "Sp. Attack": 89,
-        "Sp. Defense": 65,
-        "Speed": 98
+        "HP": null,
+        "Attack": null,
+        "Defense": null,
+        "Sp. Attack": null,
+        "Sp. Defense": null,
+        "Speed": null
       },
       "id": 1
     },
     {
-      "id": 2,
       "name": {
-        "english": "Ivysaur",
-        "japanese": "フシギソウ",
-        "chinese": "妙蛙草",
-        "french": "Herbizarre"
+        "french": "Bulbe"
       },
-      "type": [
-        "Grass",
-        "Poison"
-      ],
       "base": {
-        "HP": 60,
-        "Attack": 62,
-        "Defense": 63,
-        "Sp. Attack": 80,
-        "Sp. Defense": 80,
-        "Speed": 60
-      }
+        "HP": null,
+        "Attack": null,
+        "Defense": null,
+        "Sp. Attack": null,
+        "Sp. Defense": null,
+        "Speed": null
+      },
+      "id": 2
     },
     {
       "id": 3,
@@ -16757,6 +16752,149 @@
         "Speed": null
       },
       "id": 832
+    },
+    {
+      "name": {
+        "french": "testeur"
+      },
+      "type": "",
+      "base": {
+        "HP": 34,
+        "Attack": 31,
+        "Defense": 30,
+        "Sp. Attack": 29,
+        "Sp. Defense": 28,
+        "Speed": 32
+      },
+      "id": 833
+    },
+    {
+      "name": {
+        "french": "testeur2"
+      },
+      "type": "",
+      "base": {
+        "HP": 34,
+        "Attack": 31,
+        "Defense": 30,
+        "Sp. Attack": 29,
+        "Sp. Defense": 28,
+        "Speed": 32
+      },
+      "id": 834
+    },
+    {
+      "name": {
+        "french": "ddddddddddddddd"
+      },
+      "type": "",
+      "base": {
+        "HP": null,
+        "Attack": null,
+        "Defense": null,
+        "Sp. Attack": null,
+        "Sp. Defense": null,
+        "Speed": null
+      },
+      "id": 835
+    },
+    {
+      "name": {
+        "french": "Pakloglou"
+      },
+      "type": "",
+      "base": {
+        "HP": 45,
+        "Attack": 3,
+        "Defense": 456,
+        "Sp. Attack": 87,
+        "Sp. Defense": 7,
+        "Speed": 76
+      },
+      "id": 836
+    },
+    {
+      "name": {
+        "french": "EssaieType"
+      },
+      "type": [],
+      "base": {
+        "HP": 45,
+        "Attack": 3,
+        "Defense": 4,
+        "Sp. Attack": 78,
+        "Sp. Defense": 8,
+        "Speed": 53
+      },
+      "id": 837
+    },
+    {
+      "name": {
+        "french": "EssaieType"
+      },
+      "type": [],
+      "base": {
+        "HP": 45,
+        "Attack": 3,
+        "Defense": 4,
+        "Sp. Attack": 78,
+        "Sp. Defense": 8,
+        "Speed": 53
+      },
+      "id": 838
+    },
+    {
+      "name": {
+        "french": "EssaieType"
+      },
+      "type": [
+        "Poison"
+      ],
+      "base": {
+        "HP": 45,
+        "Attack": 3,
+        "Defense": 4,
+        "Sp. Attack": 78,
+        "Sp. Defense": 8,
+        "Speed": 53
+      },
+      "id": 839
+    },
+    {
+      "name": {
+        "french": "EssaieType"
+      },
+      "type": [
+        "Poison",
+        "Dragon"
+      ],
+      "base": {
+        "HP": 45,
+        "Attack": 3,
+        "Defense": 4,
+        "Sp. Attack": 78,
+        "Sp. Defense": 8,
+        "Speed": 53
+      },
+      "id": 840
+    },
+    {
+      "name": {
+        "french": "grrrrrrrrrrr"
+      },
+      "type": [
+        "Poison",
+        "Dragon"
+      ],
+      "base": {
+        "HP": 5,
+        "Attack": 7,
+        "Defense": 8,
+        "Sp. Attack": 9,
+        "Sp. Defense": 10,
+        "Speed": 6
+      },
+      "id": 841
     }
   ]
 }
