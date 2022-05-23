@@ -2,7 +2,6 @@
 import Pokemon from './Pokemon';
 import {useState, useEffect} from 'react';
 import {Container, Row, Col, Card} from 'react-bootstrap';
-import {Link} from "react-router-dom";
 import './createFormAssets/css/main.css';
 import axios from 'axios';
 

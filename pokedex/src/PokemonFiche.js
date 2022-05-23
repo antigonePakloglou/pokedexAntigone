@@ -33,7 +33,14 @@ const PokemonFiche = () => {
       axios.get(`http://localhost:3004/pokemons/${id}`)
       .then(resp => {
         if(mounted) {
-         setPokemon(resp.data);
+          setPokemon(resp.data);
+          setNom(pokemon['name']['french']);
+          setHp(pokemon['base']['HP']);
+          setAttack(pokemon['base']['Attack']);
+          setDefense(pokemon['base']['Defense']);
+          setSpAttack(pokemon['base']['Sp. Attack']);
+          setSpDefense(pokemon['base']['Sp. Defense']);
+          setSpeed(pokemon['base']['Speed']);
         
 
          
@@ -73,17 +80,6 @@ const PokemonFiche = () => {
     updatePokemon();
   }
 
-  function setForm(){
-    setNom(pokemon['name']['french']);
-     setHp(pokemon['base']['HP']);
-     setAttack(pokemon['base']['Attack']);
-     setDefense(pokemon['base']['Defense']);
-     setSpAttack(pokemon['base']['Sp. Attack']);
-     setSpDefense(pokemon['base']['Sp. Defense']);
-     setSpeed(pokemon['base']['Speed']);
-  }
-
-
   if(pokemon.length != 0) {
     
     return(
@@ -91,7 +87,7 @@ const PokemonFiche = () => {
         <div class="wrapper wrapper--w960">
           <div class="card card-3"  style={{background : 'white', fontFamily : 'Fantasy'}}>
             <Card.Title className='button' style={{ fontFamily : 'Fantasy'}}><Card.Img  style={{ width : '7%'}}  src={images[img]} /> <br/>  {pokemon['name']['french']} <br/>  <button class="btn  btn--green" onClick={ () => {editPokemon() }}><FontAwesomeIcon icon={faPenToSquare} size="sm" /></button></Card.Title>
-            <form id='formulaire' onLoad={()=> setForm()} onSubmit={ e => {e.preventDefault(); putRequest() }} >
+            <form id='formulaire'  onSubmit={ e => {e.preventDefault(); putRequest() }} >
               <Container>
                 <Row> 
                   <Col>

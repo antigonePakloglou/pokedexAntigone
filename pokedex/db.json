@@ -111,24 +111,18 @@
       }
     },
     {
-      "id": 8,
       "name": {
-        "english": "Wartortle",
-        "japanese": "カメール",
-        "chinese": "卡咪龟",
         "french": "Carabaffe"
       },
-      "type": [
-        "Water"
-      ],
       "base": {
-        "HP": 59,
+        "HP": 57,
         "Attack": 63,
         "Defense": 80,
         "Sp. Attack": 65,
         "Sp. Defense": 80,
         "Speed": 58
-      }
+      },
+      "id": 8
     },
     {
       "id": 10,
@@ -16895,6 +16889,24 @@
         "Speed": 6
       },
       "id": 841
+    },
+    {
+      "name": {
+        "french": "Glougloute"
+      },
+      "type": [
+        "Dragon",
+        "Fire"
+      ],
+      "base": {
+        "HP": 12,
+        "Attack": 48,
+        "Defense": 96,
+        "Sp. Attack": 300,
+        "Sp. Defense": 234,
+        "Speed": 24
+      },
+      "id": 842
     }
   ]
 }
