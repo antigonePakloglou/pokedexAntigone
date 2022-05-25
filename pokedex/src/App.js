@@ -24,9 +24,9 @@ function App() {
         <div className="App justify-content-center">
           <Navbar style={{background : 'black' }} >
             <Container>
-              <Navbar.Brand style={{color : 'white', fontFamily : 'Fantasy' }} href="/">Pokedex</Navbar.Brand>
-              <Nav className="me-auto">
-              
+              <Navbar.Brand style={{color : 'white', fontFamily : 'Fantasy', fontSize : '40px' }} href="/">Pokedex</Navbar.Brand>
+              <Nav className="me-auto" style={{textAlign : 'center'}}>
+              <Nav.Link style={{color : 'white', fontFamily : 'Fantasy', fontSize : '20px' }} href="/">Tous les Pokemons</Nav.Link>
                 <Nav.Link style={{color : 'white', fontFamily : 'Fantasy', fontSize : '20px' }} href="/createPokemon">Créer un pokémon</Nav.Link>
               </Nav>
             </Container>

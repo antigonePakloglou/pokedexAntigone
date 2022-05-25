@@ -56,7 +56,7 @@ const PokemonFiche = () => {
           fields[i].disabled = false;
           fields[i].style.background = '#FFF4F4';
       }
-      document.getElementById("sauvegarder").style.display = 'block';
+      document.getElementById("sauvegarder").style.display = 'inline-block';
   }
 
   function sauvegarderPokemon (){
@@ -86,7 +86,7 @@ const PokemonFiche = () => {
       <div class="page-wrapper bg p-t-180 p-b-100 font-poppins">
         <div class="wrapper wrapper--w960">
           <div class="card card-3"  style={{background : 'white', fontFamily : 'Fantasy'}}>
-            <Card.Title className='button' style={{ fontFamily : 'Fantasy'}}><Card.Img  style={{ width : '7%'}}  src={images[img]} /> <br/>  {pokemon['name']['french']} <br/>  <button class="btn  btn--green" onClick={ () => {editPokemon() }}><FontAwesomeIcon icon={faPenToSquare} size="sm" /></button></Card.Title>
+            <Card.Title className='button' style={{ fontFamily : 'Fantasy'}}><Card.Img  style={{ width : '8%'}}  src={images[img]} /> <br/>  {pokemon['name']['french']} <br/>  <button class="btn  btn--green" onClick={ () => {editPokemon() }}><FontAwesomeIcon icon={faPenToSquare} size="sm" /></button></Card.Title>
             <form id='formulaire'  onSubmit={ e => {e.preventDefault(); putRequest() }} >
               <Container>
                 <Row> 
@@ -137,10 +137,11 @@ const PokemonFiche = () => {
                     </div>
                   </Col>  
                 </Row>
+                <button class="btn btn--pill btn--green" id='sauvegarder'  style={{ display : 'none', fontFamily : 'Fantasy'}}  onClick={ () => {sauvegarderPokemon() }}>Enregistrer</button>
+              
               </Container>
-              <div class="p-t-10">
-                <button class="btn btn--pill btn--green" id='sauvegarder'  style={{ display : 'none'}}  onClick={ () => {sauvegarderPokemon() }}>Enregistrer</button>
-              </div>
+             
+              
             </form>
           </div> 
         </div>

@@ -46,8 +46,8 @@ const PokemonCreate = () => {
     return(
         <div class="page-wrapper bg p-t-180 p-b-100 font-poppins">
             <div class="wrapper wrapper--w960">
-                <div class="card card-3"  style={{background : 'white', fontFamily : 'Fantasy', fontSize : '14px'}}>
-                    <Card.Title className='button' style={{ fontFamily : 'Fantasy'}}>Créer son pokémon</Card.Title>
+                <div class="card card-3"  style={{background : 'white', fontFamily : 'Fantasy'}}>
+                    <Card.Title className='button' style={{ fontFamily : 'Fantasy', fontSize : '28px'}}>Créer un pokémon</Card.Title>
                     <form id='formulaire' onSubmit={ e => {e.preventDefault(); postRequest() }} >
                         <Container>
                             <Row> 
@@ -91,7 +91,7 @@ const PokemonCreate = () => {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col>
+                                <Col sm={4}>
                                     <div class="input-group">
                                         <label style={{ textDecoration : 'underline'}}>Sp. Defense</label>
                                         <input class="input--style-3" style={{background : '#FFF4F4'}} type="text" name="Sp.Defense" onChange={(e) => {setSpDefense(e.target.value );}} value={SpDefense} />
@@ -99,38 +99,46 @@ const PokemonCreate = () => {
                                 </Col>
                                 <Col>
                                     <div class="input-group" >
-                                        <label style={{ textDecoration : 'underline'}}>Type</label>
+                                    <label style={{ textDecoration : 'underline'}}>Type</label>
                                         <div style={{background : '#FFF4F4'}}>
-                                            <div class="form-check form-check-inline">
-                                                <br/>
-                                                <input class="form-check-input" type="checkbox" id="Poison" onChange={() => {addType('Poison');}} value="Poison"/>
-                                                <label class="form-check-label" for="inlineCheckbox1">Poison</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <br/>
-                                                <input class="form-check-input" type="checkbox" id="Dragon" onChange={() => {addType('Dragon');}} value="Dragon"/>
-                                                <label class="form-check-label" for="inlineCheckbox2">Dragon</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <br/>
-                                                <input class="form-check-input" type="checkbox" id="Water" onChange={() => {addType('Water');}} value="Water"/>
-                                                <label class="form-check-label" for="inlineCheckbox2">Eau</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <br/>
-                                                <input class="form-check-input" type="checkbox" id="Fire" onChange={() => {addType('Fire');}} value="Fire"/>
-                                                <label class="form-check-label" for="inlineCheckbox2">Feu</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <br/>
-                                                <input class="form-check-input" type="checkbox" id="Normal" onChange={() => {addType('Normal');}} value="Normal"/>
-                                                <label class="form-check-label" for="inlineCheckbox2">Normal</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <br/>
-                                                <input class="form-check-input" type="checkbox" id="Flying" onChange={() => {addType('Flying');}} value="Flying"/>
-                                                <label class="form-check-label" for="inlineCheckbox2">Vol</label>
-                                            </div>
+                                            <Row>
+                                                <Col>
+                                                    <div class="form-check ">
+                                                    
+                                                        <input class="form-check-input " type="checkbox" id="Poison" onChange={() => {addType('Poison');}} value="Poison"/>
+                                                        <label class="form-check-label" for="inlineCheckbox1">Poison</label>
+                                                    </div>
+                                                    <div class="form-check ">
+                                                    
+                                                        <input class="form-check-input" type="checkbox" id="Dragon" onChange={() => {addType('Dragon');}} value="Dragon"/>
+                                                        <label class="form-check-label" for="inlineCheckbox2">Dragon</label>
+                                                    </div>
+                                                </Col>
+                                                <Col>
+                                                    <div class="form-check ">
+                                                    
+                                                        <input class="form-check-input" type="checkbox" id="Water" onChange={() => {addType('Water');}} value="Water"/>
+                                                        <label class="form-check-label" for="inlineCheckbox2">Eau</label>
+                                                    </div>
+                                                    <div class="form-check ">
+                                                        
+                                                        <input class="form-check-input" type="checkbox" id="Fire" onChange={() => {addType('Fire');}} value="Fire"/>
+                                                        <label class="form-check-label" for="inlineCheckbox2">Feu</label>
+                                                    </div>
+                                                </Col>
+                                                <Col>
+                                                    <div class="form-check ">
+                                                    
+                                                        <input class="form-check-input" type="checkbox" id="Normal" onChange={() => {addType('Normal');}} value="Normal"/>
+                                                        <label class="form-check-label" for="inlineCheckbox2">Normal</label>
+                                                    </div>
+                                                    <div class="form-check ">
+                                                    
+                                                        <input class="form-check-input" type="checkbox" id="Flying" onChange={() => {addType('Flying');}} value="Flying"/>
+                                                        <label class="form-check-label" for="inlineCheckbox2">Vol</label>
+                                                    </div>
+                                                </Col>
+                                            </Row>
                                         </div>
                                     </div>
                                 </Col>

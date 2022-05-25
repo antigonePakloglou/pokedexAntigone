@@ -42,7 +42,7 @@ const Pokemons = () => {
                 </Row>
                
             </Container>
-           {page > 1 && <Button style={{background : 'none', border : 'none'}}  onClick={() => previous()}><FontAwesomeIcon style={{color : 'black'}}  icon={faCaretSquareLeft} size="xl" /></Button>}  <Button style={{background : 'none', border : 'none'}}  onClick={() => setPage(page + 1 )}><FontAwesomeIcon style={{color : 'black'}} icon={faCaretSquareRight} size="xl" /></Button>
+           {page > 1 && <FontAwesomeIcon style={{color : 'black'}}  onClick={() => previous()} icon={faCaretSquareLeft} size="xl" />} {page > 1 && <spane style={{fontFamily : 'Fantasy'}} >{page}</spane>} <FontAwesomeIcon style={{color : 'black'}} onClick={() => setPage(page + 1 )} icon={faCaretSquareRight} size="xl" />
         </div>
         
     )
