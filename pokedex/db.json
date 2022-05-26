@@ -4,10 +4,7 @@
       "name": {
         "french": "Roucool"
       },
-      "type": [
-        "Water",
-        "Fire"
-      ],
+      "type": [],
       "base": {
         "HP": 45,
         "Attack": 54,
@@ -22,10 +19,7 @@
       "name": {
         "french": "Roucoups"
       },
-      "type": [
-        "Water",
-        "Fire"
-      ],
+      "type": [],
       "base": {
         "HP": 66,
         "Attack": 60,
@@ -96,9 +90,7 @@
       "name": {
         "french": "Piafabec"
       },
-      "type": [
-        "Normal"
-      ],
+      "type": [],
       "base": {
         "HP": 40,
         "Attack": 60,
@@ -108,24 +100,6 @@
         "Speed": 70
       },
       "id": 21
-    },
-    {
-      "name": {
-        "french": "Pakloglou"
-      },
-      "type": [
-        "Water",
-        "Fire"
-      ],
-      "base": {
-        "HP": 34,
-        "Attack": 5,
-        "Defense": 4444,
-        "Sp. Attack": 6,
-        "Sp. Defense": 6,
-        "Speed": 34
-      },
-      "id": 22
     }
   ]
 }

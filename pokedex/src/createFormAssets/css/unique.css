@@ -290,6 +290,19 @@ input {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.checkedColor:disabled:checked {
+  background-color: #000 !important;
+  border-color: #fbd8d7;
+}
+.checkedColor:checked {
+  background-color: #ff687a !important;
+  border-color: #fbd8d7;
+}
+
+.labelOpacity:disabled {
+  opacity: 1;
+}
+
 .input--style-3 {
   padding: 5px 0;
   font-size: 20px;
