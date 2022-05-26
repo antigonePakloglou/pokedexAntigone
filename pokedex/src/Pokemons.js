@@ -18,7 +18,7 @@ const Pokemons = () => {
            setPokemons(resp.data);
            console.log('page', page);
        });
-      }, [page]); 
+      }, [page, pokemons]); 
     
       function previous(){
         if(page == 1){

@@ -1,6 +1,5 @@
-//on genere un pokemon pour chage données dans le fichier db.json
-import Pokemon from './Pokemon';
-import {useState, useEffect} from 'react';
+import {Link} from "react-router-dom";
+import {useState} from 'react';
 import {Container, Row, Col, Card} from 'react-bootstrap';
 import './createFormAssets/css/main.css';
 import axios from 'axios';
@@ -26,6 +25,7 @@ const PokemonCreate = () => {
         
         }
         addPokemon();
+       
        
     }
 
@@ -145,7 +145,7 @@ const PokemonCreate = () => {
                             </Row>
                         </Container>
                         <div class="p-t-10">
-                            <button class="btn btn--pill btn--green"  style={{fontFamily : 'Fantasy' }} id='sauvegarder'> Valider</button>
+                            <button class="btn btn--pill btn--green"  style={{fontFamily : 'Fantasy' }} id='sauvegarder'> <Link to={'/'} >Valider</Link> </button>
                         </div>
                     </form>
                 </div> 

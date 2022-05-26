@@ -7,9 +7,6 @@ import { faTrashCan, faEye } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
-
-
-
 const Pokemon = ({id,name}) => {
 
     //recupération des images
@@ -21,6 +18,7 @@ const Pokemon = ({id,name}) => {
             await axios.delete(`http://localhost:3004/pokemons/${id}`);
         }
         deletePokemon();
+        //window.location.reload(false);
     }
     
 

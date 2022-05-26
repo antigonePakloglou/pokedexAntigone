@@ -295,6 +295,7 @@ input {
   font-size: 20px;
   color: #000;
   background: transparent;
+  text-align: center;
 }
 
 .input--style-3::-webkit-input-placeholder {

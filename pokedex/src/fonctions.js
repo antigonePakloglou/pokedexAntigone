@@ -24,3 +24,4 @@ export function importImages(r) {
     }
     return img;
   }
+

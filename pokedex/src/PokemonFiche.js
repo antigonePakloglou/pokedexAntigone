@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {Container, Row, Col, Card} from 'react-bootstrap';
-import {useState, useEffect, useRef} from 'react';
+import {useState, useEffect} from 'react';
 import './createFormAssets/css/unique.css';
 import {useParams} from "react-router-dom";
 import {importImages, concatImgName} from './fonctions';
@@ -20,6 +20,7 @@ const PokemonFiche = () => {
     const [SpDefense, setSpDefense] = useState()
     const [Speed, setSpeed] = useState()
     const { id } = useParams();
+    let listTypes = [];
   
 
     //recupération des images
@@ -33,20 +34,27 @@ const PokemonFiche = () => {
       axios.get(`http://localhost:3004/pokemons/${id}`)
       .then(resp => {
         if(mounted) {
-          setPokemon(resp.data);
-          setNom(pokemon['name']['french']);
-          setHp(pokemon['base']['HP']);
-          setAttack(pokemon['base']['Attack']);
-          setDefense(pokemon['base']['Defense']);
-          setSpAttack(pokemon['base']['Sp. Attack']);
-          setSpDefense(pokemon['base']['Sp. Defense']);
-          setSpeed(pokemon['base']['Speed']);
-        
-
-         
+            setPokemon(resp.data);
+            setNom(resp.data['name']['french']);
+            setHp(resp.data['base']['HP']);
+            setAttack(resp.data['base']['Attack']);
+            setDefense(resp.data['base']['Defense']);
+            setSpAttack(resp.data['base']['Sp. Attack']);
+            setSpDefense(resp.data['base']['Sp. Defense']);
+            setSpeed(resp.data['base']['Speed']); 
+            resp.data['type'].forEach((t) => {
+              console.log(t)
+              document.getElementById(t).checked = true;
+              //listTypes.push(document.getElementById(t).value);
+              
+            });
+           
         }
      })
-     return () => mounted = false;
+     return () => {
+        mounted = false;
+       
+    }
     }, [id]); 
 
     function editPokemon (){
@@ -72,7 +80,7 @@ const PokemonFiche = () => {
     function putRequest (){
     async function updatePokemon() {
 
-        let data = { name:{french: nom}, type: type, base:{HP:parseInt(HP), Attack: parseInt(Attack), Defense: parseInt(Defense), 'Sp. Attack': parseInt(SpAttack), 'Sp. Defense': parseInt(SpDefense), Speed: parseInt(Speed)} };
+        let data = { name:{french: nom}, type: listTypes, base:{HP:parseInt(HP), Attack: parseInt(Attack), Defense: parseInt(Defense), 'Sp. Attack': parseInt(SpAttack), 'Sp. Defense': parseInt(SpDefense), Speed: parseInt(Speed)} };
     
         await axios.put(`http://localhost:3004/pokemons/${id}`, data);
     
@@ -80,14 +88,30 @@ const PokemonFiche = () => {
     updatePokemon();
   }
 
+  function addType(id){
+    //recup types selectionnées
+    console.log(id);
+    var fields = document.getElementById(id);
+    if( fields.checked){ 
+        listTypes.push(fields.value); 
+    } else{
+        let index = listTypes.indexOf(fields.value);
+        if( index != -1){
+            listTypes.splice(index, 1);
+        } 
+    }  
+}
+
   if(pokemon.length != 0) {
+    console.log(pokemon);
+    
     
     return(
       <div class="page-wrapper bg p-t-180 p-b-100 font-poppins">
         <div class="wrapper wrapper--w960">
           <div class="card card-3"  style={{background : 'white', fontFamily : 'Fantasy'}}>
             <Card.Title className='button' style={{ fontFamily : 'Fantasy'}}><Card.Img  style={{ width : '8%'}}  src={images[img]} /> <br/>  {pokemon['name']['french']} <br/>  <button class="btn  btn--green" onClick={ () => {editPokemon() }}><FontAwesomeIcon icon={faPenToSquare} size="sm" /></button></Card.Title>
-            <form id='formulaire'  onSubmit={ e => {e.preventDefault(); putRequest() }} >
+            <form id='formulaire' onSubmit={ e => {e.preventDefault(); putRequest() }} >
               <Container>
                 <Row> 
                   <Col>
@@ -136,12 +160,56 @@ const PokemonFiche = () => {
                       <input disabled class="input--style-3" type="text" name="Sp.Defense" onChange={(e) => {setSpDefense(e.target.value );}} value={SpDefense} />
                     </div>
                   </Col>  
+                  <Col>
+                                    <div class="input-group" >
+                                    <label style={{ textDecoration : 'underline'}}>Type</label>
+                                        <div >
+                                            <Row>
+                                                <Col>
+                                                    <div class="form-check ">
+                                                    
+                                                        <input class="form-check-input " type="checkbox" id="Poison" onChange={() => {addType('Poison');}} value="Poison"/>
+                                                        <label class="form-check-label" for="inlineCheckbox1">Poison</label>
+                                                    </div>
+                                                    <div class="form-check ">
+                                                    
+                                                        <input class="form-check-input" type="checkbox" id="Dragon" onChange={() => {addType('Dragon');}} value="Dragon"/>
+                                                        <label class="form-check-label" for="inlineCheckbox2">Dragon</label>
+                                                    </div>
+                                                </Col>
+                                                <Col>
+                                                    <div class="form-check ">
+                                                    
+                                                        <input class="form-check-input" type="checkbox" id="Water" onChange={() => {addType('Water');}} value="Water"/>
+                                                        <label class="form-check-label" for="inlineCheckbox2">Eau</label>
+                                                    </div>
+                                                    <div class="form-check ">
+                                                        
+                                                        <input class="form-check-input" type="checkbox" id="Fire" onChange={() => {addType('Fire');}} value="Fire"/>
+                                                        <label class="form-check-label" for="inlineCheckbox2">Feu</label>
+                                                    </div>
+                                                </Col>
+                                                <Col>
+                                                    <div class="form-check ">
+                                                    
+                                                        <input class="form-check-input" type="checkbox" id="Normal" onChange={() => {addType('Normal');}} value="Normal"/>
+                                                        <label class="form-check-label" for="inlineCheckbox2">Normal</label>
+                                                    </div>
+                                                    <div class="form-check ">
+                                                    
+                                                        <input class="form-check-input" type="checkbox" id="Flying" onChange={() => {addType('Flying');}} value="Flying"/>
+                                                        <label class="form-check-label" for="inlineCheckbox2">Vol</label>
+                                                    </div>
+                                                </Col>
+                                            </Row>
+                                        </div>
+                                    </div>
+                                </Col>
                 </Row>
-                <button class="btn btn--pill btn--green" id='sauvegarder'  style={{ display : 'none', fontFamily : 'Fantasy'}}  onClick={ () => {sauvegarderPokemon() }}>Enregistrer</button>
-              
-              </Container>
              
               
+              </Container>
+              <button class="btn btn--pill btn--green" id='sauvegarder'  style={{ display : 'none', fontFamily : 'Fantasy'}}  onClick={ () => {sauvegarderPokemon() }}>Enregistrer</button>
             </form>
           </div> 
         </div>
