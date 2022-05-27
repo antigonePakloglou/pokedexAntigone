@@ -42,13 +42,7 @@ const PokemonFiche = () => {
             setSpAttack(resp.data['base']['Sp. Attack']);
             setSpDefense(resp.data['base']['Sp. Defense']);
             setSpeed(resp.data['base']['Speed']); 
-            resp.data['type'].forEach((t) => {
-              console.log(t)
-              document.getElementById(t).checked = true;
-              document.getElementById(t).style.backgroundColor = '#000';
-              //listTypes.push(document.getElementById(t).value);
-              
-            });
+            
            
         }
      })
@@ -89,9 +83,18 @@ const PokemonFiche = () => {
     updatePokemon();
   }
 
+  function isChecked(){
+    pokemon['type'].forEach((t) => {
+      listTypes.push(t);
+      document.getElementById(t).checked = true;
+      document.getElementById(t).style.backgroundColor = '#000';
+    });
+  }
+    
+  
+
   function addType(id){
     //recup types selectionnées
-    console.log(id);
     var fields = document.getElementById(id);
     if( fields.checked){ 
         listTypes.push(fields.value); 
@@ -104,9 +107,7 @@ const PokemonFiche = () => {
 }
 
   if(pokemon.length != 0) {
-    console.log(pokemon);
-    
-    
+    setTimeout(isChecked, 500);
     return(
       <div class="page-wrapper bg p-t-180 p-b-100 font-poppins">
         <div class="wrapper wrapper--w960">

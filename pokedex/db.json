@@ -4,7 +4,9 @@
       "name": {
         "french": "Roucool"
       },
-      "type": [],
+      "type": [
+        "Water"
+      ],
       "base": {
         "HP": 45,
         "Attack": 54,
@@ -19,7 +21,6 @@
       "name": {
         "french": "Roucoups"
       },
-      "type": [],
       "base": {
         "HP": 66,
         "Attack": 60,
@@ -34,7 +35,9 @@
       "name": {
         "french": "Roucarnage"
       },
-      "type": [],
+      "type": [
+        "Water"
+      ],
       "base": {
         "HP": 83,
         "Attack": 80,
@@ -46,15 +49,13 @@
       "id": 18
     },
     {
-      "id": 19,
       "name": {
-        "english": "Rattata",
-        "japanese": "コラッタ",
-        "chinese": "小拉达",
         "french": "Rattata"
       },
       "type": [
-        "Normal"
+        "Fire",
+        "Water",
+        "Dragon"
       ],
       "base": {
         "HP": 30,
@@ -63,7 +64,8 @@
         "Sp. Attack": 25,
         "Sp. Defense": 35,
         "Speed": 72
-      }
+      },
+      "id": 19
     },
     {
       "id": 20,
