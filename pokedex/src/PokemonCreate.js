@@ -60,13 +60,13 @@ const PokemonCreate = () => {
                                 <Col>
                                     <div class="input-group">
                                         <label style={{ textDecoration : 'underline'}}>HP</label>
-                                        <input class="input--style-3" style={{background : '#FFF4F4'}} type="text" name="HP" onChange={(e) => {setHp(e.target.value );}} value={HP}/> 
+                                        <input class="input--style-3" style={{background : '#FFF4F4'}} type="number" name="HP" onChange={(e) => {setHp(e.target.value );}} value={HP}/> 
                                     </div>
                                 </Col>
                                 <Col>
                                     <div class="input-group">
                                         <label style={{ textDecoration : 'underline'}}>Vitesse</label>
-                                        <input class="input--style-3" style={{background : '#FFF4F4'}} type="text" name="Vitesse" onChange={(e) => {setSpeed(e.target.value );}} value={Speed} />
+                                        <input class="input--style-3" style={{background : '#FFF4F4'}} type="number" name="Vitesse" onChange={(e) => {setSpeed(e.target.value );}} value={Speed} />
                                     </div>
                                 </Col>
                             </Row>
@@ -74,19 +74,19 @@ const PokemonCreate = () => {
                                 <Col>
                                     <div class="input-group">
                                         <label style={{ textDecoration : 'underline'}}>Attaque</label>
-                                        <input class="input--style-3" style={{background : '#FFF4F4'}} type="text" name="Attaque" onChange={(e) => {setAttack(e.target.value );}} value={Attack}/>
+                                        <input class="input--style-3" style={{background : '#FFF4F4'}} type="number" name="Attaque" onChange={(e) => {setAttack(e.target.value );}} value={Attack}/>
                                     </div>
                                 </Col>
                                 <Col>
                                     <div class="input-group">
                                         <label style={{ textDecoration : 'underline'}}>Defense</label>
-                                        <input class="input--style-3" style={{background : '#FFF4F4'}} type="text" name="Defense" onChange={(e) => {setDefense(e.target.value );}} value={Defense} />
+                                        <input class="input--style-3" style={{background : '#FFF4F4'}} type="number" name="Defense" onChange={(e) => {setDefense(e.target.value );}} value={Defense} />
                                     </div>
                                 </Col>
                                 <Col>
                                     <div class="input-group">
                                         <label style={{ textDecoration : 'underline'}}>Sp. Attaque</label>
-                                        <input class="input--style-3" style={{background : '#FFF4F4'}} type="text" name="Sp.Attaque" onChange={(e) => {setSpAttack(e.target.value );}}  value={SpAttack} />
+                                        <input class="input--style-3" style={{background : '#FFF4F4'}} type="number" name="Sp.Attaque" onChange={(e) => {setSpAttack(e.target.value );}}  value={SpAttack} />
                                     </div>
                                 </Col>
                             </Row>
@@ -94,7 +94,7 @@ const PokemonCreate = () => {
                                 <Col sm={4}>
                                     <div class="input-group">
                                         <label style={{ textDecoration : 'underline'}}>Sp. Defense</label>
-                                        <input class="input--style-3" style={{background : '#FFF4F4'}} type="text" name="Sp.Defense" onChange={(e) => {setSpDefense(e.target.value );}} value={SpDefense} />
+                                        <input class="input--style-3" style={{background : '#FFF4F4'}} type="number" name="Sp.Defense" onChange={(e) => {setSpDefense(e.target.value );}} value={SpDefense} />
                                     </div>
                                 </Col>
                                 <Col>
@@ -145,7 +145,7 @@ const PokemonCreate = () => {
                             </Row>
                         </Container>
                         <div class="p-t-10">
-                            <button class="btn btn--pill btn--green"  style={{fontFamily : 'Fantasy' }} id='sauvegarder'> <Link to={'/'} >Valider</Link> </button>
+                            <button class="btn btn--pill btn--green"  style={{fontFamily : 'Fantasy' }} id='sauvegarder'> Valider </button>
                         </div>
                     </form>
                 </div> 

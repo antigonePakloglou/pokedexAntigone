@@ -12,7 +12,7 @@ const PokemonFiche = () => {
     //recupération données d'un pokémon
     let [pokemon, setPokemon] = useState([]);
     const [nom, setNom] = useState()
-    const [type, setType] = useState()
+    const [types, setTypes] = useState()
     const [HP, setHp] = useState('')
     const [Attack, setAttack] = useState()
     const [Defense, setDefense]  = useState()
@@ -20,7 +20,7 @@ const PokemonFiche = () => {
     const [SpDefense, setSpDefense] = useState()
     const [Speed, setSpeed] = useState()
     const { id } = useParams();
-    let listTypes = [];
+    var listTypes = [];
   
 
     //recupération des images
@@ -85,16 +85,19 @@ const PokemonFiche = () => {
 
   function isChecked(){
     pokemon['type'].forEach((t) => {
+     
       listTypes.push(t);
       document.getElementById(t).checked = true;
       document.getElementById(t).style.backgroundColor = '#000';
     });
+   
   }
     
   
 
   function addType(id){
     //recup types selectionnées
+    console.log('avant ajout ',listTypes);
     var fields = document.getElementById(id);
     if( fields.checked){ 
         listTypes.push(fields.value); 
@@ -104,6 +107,7 @@ const PokemonFiche = () => {
             listTypes.splice(index, 1);
         } 
     }  
+    console.log('Apres ajout ',listTypes);
 }
 
   if(pokemon.length != 0) {
@@ -125,13 +129,13 @@ const PokemonFiche = () => {
                   <Col>
                     <div class="input-group">
                       <label style={{ textDecoration : 'underline'}}>HP</label>
-                      <input disabled class="input--style-3" type="text" name="HP" onChange={(e) => {setHp(e.target.value );}} value={HP}/> 
+                      <input disabled class="input--style-3" type="number" name="HP" onChange={(e) => {setHp(e.target.value );}} value={HP}/> 
                     </div>
                   </Col>
                   <Col>
                     <div class="input-group">
                       <label style={{ textDecoration : 'underline'}}>Vitesse</label>
-                      <input disabled class="input--style-3" type="text" name="Vitesse" onChange={(e) => {setSpeed(e.target.value );}} value={Speed} />
+                      <input disabled class="input--style-3" type="number" name="Vitesse" onChange={(e) => {setSpeed(e.target.value );}} value={Speed} />
                     </div>
                   </Col>
                 </Row>
@@ -139,19 +143,19 @@ const PokemonFiche = () => {
                   <Col>
                     <div class="input-group">
                       <label style={{ textDecoration : 'underline'}}>Attaque</label>
-                      <input disabled class="input--style-3" type="text" name="Attaque" onChange={(e) => {setAttack(e.target.value );}} value={Attack}/>
+                      <input disabled class="input--style-3" type="number" name="Attaque" onChange={(e) => {setAttack(e.target.value );}} value={Attack}/>
                     </div>
                   </Col>
                   <Col>
                     <div class="input-group">
                       <label style={{ textDecoration : 'underline'}}>Defense</label>
-                      <input disabled class="input--style-3" type="text" name="Defense" onChange={(e) => {setDefense(e.target.value );}} value={Defense} />
+                      <input disabled class="input--style-3" type="number" name="Defense" onChange={(e) => {setDefense(e.target.value );}} value={Defense} />
                     </div>
                   </Col>
                   <Col>
                     <div class="input-group">
                       <label style={{ textDecoration : 'underline'}}>Sp. Attaque</label>
-                      <input disabled class="input--style-3" type="text" name="Sp.Attaque" onChange={(e) => {setSpAttack(e.target.value );}}  value={SpAttack} />
+                      <input disabled class="input--style-3" type="number" name="Sp.Attaque" onChange={(e) => {setSpAttack(e.target.value );}}  value={SpAttack} />
                     </div>
                   </Col>
                 </Row>
@@ -159,7 +163,7 @@ const PokemonFiche = () => {
                   <Col>
                     <div class="input-group">
                       <label style={{ textDecoration : 'underline'}}>Sp. Defense</label>
-                      <input disabled class="input--style-3" type="text" name="Sp.Defense" onChange={(e) => {setSpDefense(e.target.value );}} value={SpDefense} />
+                      <input disabled class="input--style-3" type="number" name="Sp.Defense" onChange={(e) => {setSpDefense(e.target.value );}} value={SpDefense} />
                     </div>
                   </Col>  
                   <Col>
@@ -170,36 +174,36 @@ const PokemonFiche = () => {
                                                 <Col>
                                                     <div class="form-check test">
                                                     
-                                                        <input class="form-check-input checkedColor" type="checkbox" id="Poison" onChange={() => {addType('Poison');}} value="Poison"/>
+                                                        <input class="form-check-input checkedColor" disabled type="checkbox" id="Poison" onChange={() => {addType('Poison');}} value="Poison"/>
                                                         <label class="form-check-label labelOpacity" for="inlineCheckbox1">Poison</label>
                                                     </div>
                                                     <div class="form-check ">
                                                     
-                                                        <input class="form-check-input checkedColor" type="checkbox" id="Dragon" onChange={() => {addType('Dragon');}} value="Dragon"/>
+                                                        <input class="form-check-input checkedColor" disabled type="checkbox" id="Dragon" onChange={() => {addType('Dragon');}} value="Dragon"/>
                                                         <label class="form-check-label labelOpacity" for="inlineCheckbox2">Dragon</label>
                                                     </div>
                                                 </Col>
                                                 <Col>
                                                     <div class="form-check ">
                                                     
-                                                        <input class="form-check-input checkedColor" type="checkbox" id="Water" onChange={() => {addType('Water');}} value="Water"/>
+                                                        <input class="form-check-input checkedColor" disabled type="checkbox" id="Water" onChange={() => {addType('Water');}} value="Water"/>
                                                         <label class="form-check-label labelOpacity" for="inlineCheckbox2">Eau</label>
                                                     </div>
                                                     <div class="form-check ">
                                                         
-                                                        <input class="form-check-input checkedColor" type="checkbox" id="Fire" onChange={() => {addType('Fire');}} value="Fire"/>
+                                                        <input class="form-check-input checkedColor" disabled type="checkbox" id="Fire" onChange={() => {addType('Fire');}} value="Fire"/>
                                                         <label class="form-check-label labelOpacity" for="inlineCheckbox2">Feu</label>
                                                     </div>
                                                 </Col>
                                                 <Col>
                                                     <div class="form-check ">
                                                     
-                                                        <input class="form-check-input checkedColor" type="checkbox" id="Normal" onChange={() => {addType('Normal');}} value="Normal"/>
+                                                        <input class="form-check-input checkedColor" disabled type="checkbox" id="Normal" onChange={() => {addType('Normal');}} value="Normal"/>
                                                         <label class="form-check-label labelOpacity" for="inlineCheckbox2">Normal</label>
                                                     </div>
                                                     <div class="form-check ">
                                                     
-                                                        <input class="form-check-input checkedColor" type="checkbox" id="Flying" onChange={() => {addType('Flying');}} value="Flying"/>
+                                                        <input class="form-check-input checkedColor" disabled type="checkbox" id="Flying" onChange={() => {addType('Flying');}} value="Flying"/>
                                                         <label class="form-check-label labelOpacity" for="inlineCheckbox2">Vol</label>
                                                     </div>
                                                 </Col>

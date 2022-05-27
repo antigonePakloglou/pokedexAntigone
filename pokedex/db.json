@@ -21,11 +21,12 @@
       "name": {
         "french": "Roucoups"
       },
+      "type": [],
       "base": {
         "HP": 66,
         "Attack": 60,
-        "Defense": 55,
-        "Sp. Attack": 50,
+        "Defense": 66,
+        "Sp. Attack": 58,
         "Sp. Defense": 50,
         "Speed": 71
       },
@@ -36,7 +37,8 @@
         "french": "Roucarnage"
       },
       "type": [
-        "Water"
+        "Water",
+        "Fire"
       ],
       "base": {
         "HP": 83,
@@ -68,17 +70,10 @@
       "id": 19
     },
     {
-      "id": 20,
       "name": {
-        "english": "Raticate",
-        "japanese": "ラッタ",
-        "chinese": "拉达",
         "french": "Rattatac"
       },
-      "type": [
-        "Water",
-        "Fire"
-      ],
+      "type": [],
       "base": {
         "HP": 55,
         "Attack": 81,
@@ -86,7 +81,8 @@
         "Sp. Attack": 50,
         "Sp. Defense": 70,
         "Speed": 97
-      }
+      },
+      "id": 20
     },
     {
       "name": {
@@ -102,6 +98,39 @@
         "Speed": 70
       },
       "id": 21
+    },
+    {
+      "name": {
+        "french": "Antigone"
+      },
+      "type": [],
+      "base": {
+        "HP": 7777,
+        "Attack": 5,
+        "Defense": 5,
+        "Sp. Attack": 5,
+        "Sp. Defense": 5,
+        "Speed": 45
+      },
+      "id": 22
+    },
+    {
+      "name": {
+        "french": "Antigone"
+      },
+      "type": [
+        "Poison",
+        "Dragon"
+      ],
+      "base": {
+        "HP": 55,
+        "Attack": 5,
+        "Defense": 5,
+        "Sp. Attack": 5,
+        "Sp. Defense": 5,
+        "Speed": 45
+      },
+      "id": 23
     }
   ]
 }
