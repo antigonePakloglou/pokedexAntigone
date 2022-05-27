@@ -131,6 +131,24 @@
         "Speed": 45
       },
       "id": 23
+    },
+    {
+      "name": {
+        "french": "test"
+      },
+      "type": [
+        "Poison",
+        "Fire"
+      ],
+      "base": {
+        "HP": 5,
+        "Attack": 9,
+        "Defense": 11,
+        "Sp. Attack": 13,
+        "Sp. Defense": 15,
+        "Speed": 7
+      },
+      "id": 24
     }
   ]
 }

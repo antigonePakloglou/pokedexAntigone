@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import {useState} from 'react';
 import {Container, Row, Col, Card} from 'react-bootstrap';
 import './createFormAssets/css/main.css';
@@ -15,6 +15,7 @@ const PokemonCreate = () => {
     const [SpDefense, setSpDefense] = useState('')
     const [Speed, setSpeed] = useState('')
     let listTypes = [];
+    let navigate = useNavigate()
 
     function postRequest (){
         
@@ -22,6 +23,7 @@ const PokemonCreate = () => {
             let data = { name:{french: nom} , type: listTypes, base:{HP:parseInt(HP), Attack: parseInt(Attack), Defense: parseInt(Defense), 'Sp. Attack': parseInt(SpAttack), 'Sp. Defense': parseInt(SpDefense), Speed: parseInt(Speed)} };
         
             await axios.post('http://localhost:3004/pokemons', data);
+            navigate('/');
         
         }
         addPokemon();
