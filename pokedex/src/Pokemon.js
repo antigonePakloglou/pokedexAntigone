@@ -18,7 +18,7 @@ const Pokemon = ({id,name}) => {
             await axios.delete(`http://localhost:3004/pokemons/${id}`);
         }
         deletePokemon();
-        //window.location.reload(false);
+        window.location.reload(false);
     }
     
 

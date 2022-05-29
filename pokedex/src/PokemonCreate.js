@@ -7,7 +7,6 @@ import axios from 'axios';
 const PokemonCreate = () => {
 
     const [nom, setNom] = useState('')
-    const [type, setType] = useState('')
     const [HP, setHp] = useState('')
     const [Attack, setAttack] = useState('')
     const [Defense, setDefense]  = useState('')
@@ -104,40 +103,82 @@ const PokemonCreate = () => {
                                     <label style={{ textDecoration : 'underline'}}>Type</label>
                                         <div style={{background : '#FFF4F4', fontSize : '20px'}}>
                                             <Row>
-                                                <Col>
-                                                    <div class="form-check ">
-                                                    
-                                                        <input class="form-check-input checkedColor" type="checkbox" id="Poison" onChange={() => {addType('Poison');}} value="Poison"/>
-                                                        <label class="form-check-label" for="inlineCheckbox1">Poison</label>
+                                                 <Col>
+                                                <div class="form-check ">
+                                                      <input class="form-check-input checkedColor" type="checkbox" id="Ground" onChange={() => {addType('Ground');}} value="Ground"/>
+                                                      <label class="form-check-label labelOpacity" for="inlineCheckbox2">Sol</label>
                                                     </div>
-                                                    <div class="form-check ">
-                                                    
-                                                        <input class="form-check-input checkedColor" type="checkbox" id="Dragon" onChange={() => {addType('Dragon');}} value="Dragon"/>
-                                                        <label class="form-check-label" for="inlineCheckbox2">Dragon</label>
-                                                    </div>
-                                                </Col>
-                                                <Col>
-                                                    <div class="form-check ">
-                                                    
-                                                        <input class="form-check-input checkedColor" type="checkbox" id="Water" onChange={() => {addType('Water');}} value="Water"/>
-                                                        <label class="form-check-label" for="inlineCheckbox2">Eau</label>
-                                                    </div>
-                                                    <div class="form-check ">
-                                                        
+                                                    <div class="form-check "> 
                                                         <input class="form-check-input checkedColor" type="checkbox" id="Fire" onChange={() => {addType('Fire');}} value="Fire"/>
-                                                        <label class="form-check-label" for="inlineCheckbox2">Feu</label>
+                                                        <label class="form-check-label labelOpacity" for="inlineCheckbox2">Feu</label>
+                                                    </div>
+                                                    <div class="form-check ">
+                                                      <input class="form-check-input checkedColor" type="checkbox" id="Rock" onChange={() => {addType('Rock');}} value="Rock"/>
+                                                      <label class="form-check-label labelOpacity" for="inlineCheckbox2">Roche</label>
+                                                    </div>
+                                                    <div class="form-check ">
+                                                        <input class="form-check-input checkedColor" type="checkbox" id="Normal" onChange={() => {addType('Normal');}} value="Normal"/>
+                                                        <label class="form-check-label labelOpacity" for="inlineCheckbox2">Normal</label>
+                                                    </div>
+                                                    <div class="form-check test">
+                                                        <input class="form-check-input checkedColor" type="checkbox" id="Poison" onChange={() => {addType('Poison');}} value="Poison"/>
+                                                        <label class="form-check-label labelOpacity" for="inlineCheckbox1">Poison</label>
+                                                    </div>
+                                                    <div class="form-check ">
+                                                        <input class="form-check-input checkedColor" type="checkbox" id="Bug" onChange={() => {addType('Bug');}} value="Bug"/>
+                                                        <label class="form-check-label labelOpacity" for="inlineCheckbox2">Insecte</label>
                                                     </div>
                                                 </Col>
                                                 <Col>
-                                                    <div class="form-check ">
-                                                    
-                                                        <input class="form-check-input checkedColor" type="checkbox" id="Normal" onChange={() => {addType('Normal');}} value="Normal"/>
-                                                        <label class="form-check-label" for="inlineCheckbox2">Normal</label>
+                                                  <div class="form-check ">
+                                                      <input class="form-check-input checkedColor" type="checkbox" id="Fairy" onChange={() => {addType('Fairy');}} value="Fairy"/>
+                                                      <label class="form-check-label labelOpacity" for="inlineCheckbox2">Fée</label>
                                                     </div>
                                                     <div class="form-check ">
-                                                    
+                                                        <input class="form-check-input checkedColor" type="checkbox" id="Water" onChange={() => {addType('Water');}} value="Water"/>
+                                                        <label class="form-check-label labelOpacity" for="inlineCheckbox2">Eau</label>
+                                                    </div>
+                                                    <div class="form-check ">
+                                                      <input class="form-check-input checkedColor" type="checkbox" id="Steel" onChange={() => {addType('Steel');}} value="Steel"/>
+                                                      <label class="form-check-label labelOpacity" for="inlineCheckbox2">Acier</label>
+                                                    </div>
+                                                    <div class="form-check ">
+                                                      <input class="form-check-input checkedColor" type="checkbox" id="Ice" onChange={() => {addType('Ice');}} value="Ice"/>
+                                                      <label class="form-check-label labelOpacity" for="inlineCheckbox2">Glace</label>
+                                                    </div>
+                                                    <div class="form-check ">
+                                                      <input class="form-check-input checkedColor" type="checkbox" id="Ghost" onChange={() => {addType('Ghost');}} value="Ghost"/>
+                                                      <label class="form-check-label labelOpacity" for="inlineCheckbox2">Spectre</label>
+                                                    </div>
+                                                    <div class="form-check ">
+                                                        <input class="form-check-input checkedColor" type="checkbox" id="Electric" onChange={() => {addType('Electric');}} value="Electric"/>
+                                                        <label class="form-check-label labelOpacity" for="inlineCheckbox2">Electrique</label>
+                                                    </div>
+                                                </Col>
+                                                <Col>
+                                                  <div class="form-check ">
                                                         <input class="form-check-input checkedColor" type="checkbox" id="Flying" onChange={() => {addType('Flying');}} value="Flying"/>
-                                                        <label class="form-check-label" for="inlineCheckbox2">Vol</label>
+                                                        <label class="form-check-label labelOpacity" for="inlineCheckbox2">Vol</label>
+                                                    </div>
+                                                    <div class="form-check ">
+                                                      <input class="form-check-input checkedColor" type="checkbox" id="Psychic" onChange={() => {addType('Psychic');}} value="Psychic"/>
+                                                      <label class="form-check-label labelOpacity" for="inlineCheckbox2">Psy</label>
+                                                    </div>
+                                                    <div class="form-check ">
+                                                        <input class="form-check-input checkedColor" type="checkbox" id="Grass" onChange={() => {addType('Grass');}} value="Grass"/>
+                                                        <label class="form-check-label labelOpacity" for="inlineCheckbox2">Plante</label>
+                                                    </div>
+                                                    <div class="form-check ">
+                                                      <input class="form-check-input checkedColor" type="checkbox" id="Fighting" onChange={() => {addType('Fighting');}} value="Fighting"/>
+                                                      <label class="form-check-label labelOpacity" for="inlineCheckbox2">Combat</label>
+                                                  </div>
+                                                  <div class="form-check ">
+                                                        <input class="form-check-input checkedColor" type="checkbox" id="Dragon" onChange={() => {addType('Dragon');}} value="Dragon"/>
+                                                        <label class="form-check-label labelOpacity" for="inlineCheckbox2">Dragon</label>
+                                                    </div>
+                                                    <div class="form-check ">
+                                                      <input class="form-check-input checkedColor" type="checkbox" id="Dark" onChange={() => {addType('Dark');}} value="Dark"/>
+                                                      <label class="form-check-label labelOpacity" for="inlineCheckbox2">Ténèbres</label>
                                                     </div>
                                                 </Col>
                                             </Row>
